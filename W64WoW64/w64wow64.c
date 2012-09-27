@@ -41,7 +41,11 @@ void PrintLastError(void) {
 
 }
 
-
+/**
+*
+* X64Call Part of WOW64Ext Library
+* See internals.h
+*/
 extern __declspec(dllexport) unsigned __int64 X64Call( void * lvpFunctionPtr, 
 	int nArgc, ... )
 {
