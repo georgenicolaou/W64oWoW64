@@ -287,11 +287,11 @@ extern __declspec(dllexport) BOOL InitializeW64oWoW64()
 
 	lpsKernel32Ldr = GetModule64LdrTable( L"kernel32.dll" );
 	lpsKernel32Ldr->LoadCount = 0xffff;
-	lpsKernel32Ldr->Flags += LDRP_ENTRY_PROCESSED | LDRP_PROCESS_ATTACH_CALLED;
+	lpsKernel32Ldr->Flags |= LDRP_ENTRY_PROCESSED | LDRP_PROCESS_ATTACH_CALLED;
 
 	lpsKernelBaseLdr = GetModule64LdrTable( L"KERNELBASE.dll" );
 	lpsKernelBaseLdr->LoadCount = 0xffff;
-	lpsKernelBaseLdr->Flags += LDRP_ENTRY_PROCESSED | LDRP_PROCESS_ATTACH_CALLED;
+	lpsKernelBaseLdr->Flags |= LDRP_ENTRY_PROCESSED | LDRP_PROCESS_ATTACH_CALLED;
 
 	return TRUE;
 }
